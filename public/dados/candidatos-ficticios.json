@@ -1,0 +1,53 @@
+{
+  "_comentario": "Personagens fictícios para o modo 'Candidatos fictícios'. Nenhuma referência a pessoas ou partidos reais. Edite apelidos, números, slogans e propostas à vontade.",
+  "candidatos": [
+    {
+      "apelido": "Maré",
+      "numero": "11",
+      "slogan": "Escola boa é escola de todo mundo",
+      "propostas": [
+        "Criar um cantinho de leitura com livros escolhidos pela turma",
+        "Organizar um mural de avisos que os alunos ajudam a montar",
+        "Fazer uma feira de trocas de materiais no fim do ano"
+      ],
+      "mascote": "boto",
+      "cor": "azul"
+    },
+    {
+      "apelido": "Faísca",
+      "numero": "22",
+      "slogan": "Ideia boa não fica na gaveta",
+      "propostas": [
+        "Montar um clube de ciência com experimentos mensais",
+        "Pedir tomadas e wi-fi mais forte na biblioteca",
+        "Criar um canal de sugestões anônimas para a coordenação"
+      ],
+      "mascote": "arara",
+      "cor": "laranja"
+    },
+    {
+      "apelido": "Raiz",
+      "numero": "33",
+      "slogan": "Cuidar da escola é cuidar da gente",
+      "propostas": [
+        "Plantar uma horta com a ajuda de todas as turmas",
+        "Fazer campanha de lixo zero no pátio",
+        "Organizar mutirões de pintura das salas"
+      ],
+      "mascote": "tartaruga",
+      "cor": "verde"
+    },
+    {
+      "apelido": "Ritmo",
+      "numero": "44",
+      "slogan": "Escola com som, sorriso e movimento",
+      "propostas": [
+        "Trazer música no intervalo com playlist votada pela turma",
+        "Criar um torneio esportivo entre as turmas",
+        "Organizar um sarau de talentos no fim do semestre"
+      ],
+      "mascote": "guara",
+      "cor": "rosa"
+    }
+  ]
+}

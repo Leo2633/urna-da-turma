@@ -1,0 +1,9 @@
+Sons oficiais da urna (opcional)
+
+1. Coloque aqui os arquivos de áudio cedidos pela Justiça Eleitoral (mp3, wav ou ogg).
+   Sugestão de nomes: tecla.mp3, corrige.mp3, confirma.mp3, aviso.mp3
+2. Abra public/dados/config.json e preencha a seção "sons", por exemplo:
+   "tecla": "sons/tecla.mp3", "confirma": "sons/confirma.mp3"
+3. Recarregue o app com internet uma vez para atualizar o cache offline.
+
+Campo vazio ou arquivo ausente: o app usa o som sintetizado correspondente.

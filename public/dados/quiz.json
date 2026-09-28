@@ -1,0 +1,135 @@
+{
+  "_AVISO": "CONTEÚDO A SER VALIDADO PELO TRE-PA ANTES DO USO. As perguntas abaixo são um banco inicial de exemplo e devem ser revisadas por equipe responsável quanto à precisão jurídica e atualidade.",
+  "_comentario": "Cada pergunta tem: id único, enunciado, alternativas (2 a 4), índice da correta (começa em 0) e explicação curta mostrada após a resposta. O app sorteia 'perguntasPorPartida' (config.json) a cada partida.",
+  "perguntas": [
+    {
+      "id": "q01",
+      "enunciado": "A partir de que idade o voto é obrigatório no Brasil?",
+      "alternativas": ["16 anos", "18 anos", "21 anos"],
+      "correta": 1,
+      "explicacao": "O voto é obrigatório dos 18 aos 70 anos. Entre 16 e 17 anos e acima de 70, é facultativo."
+    },
+    {
+      "id": "q02",
+      "enunciado": "Fato ou fake: quem tem 16 anos já pode tirar o título de eleitor.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 0,
+      "explicacao": "Fato. O alistamento é facultativo aos 16 e 17 anos, e o pedido pode ser feito pela internet."
+    },
+    {
+      "id": "q03",
+      "enunciado": "O que é a zerésima?",
+      "alternativas": [
+        "O relatório impresso antes da votação mostrando zero votos",
+        "O primeiro voto registrado na urna",
+        "A lista de eleitores que faltaram"
+      ],
+      "correta": 0,
+      "explicacao": "A zerésima comprova que a urna começa sem nenhum voto registrado."
+    },
+    {
+      "id": "q04",
+      "enunciado": "Fato ou fake: o voto branco vai para o candidato que está ganhando.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 1,
+      "explicacao": "Fake. Brancos e nulos não são atribuídos a ninguém e não entram nos votos válidos."
+    },
+    {
+      "id": "q05",
+      "enunciado": "Qual a diferença entre voto branco e voto nulo?",
+      "alternativas": [
+        "Não há diferença: os dois valem para o mesmo candidato",
+        "Branco é apertar a tecla BRANCO; nulo é digitar um número inexistente",
+        "Nulo só existe no segundo turno"
+      ],
+      "correta": 1,
+      "explicacao": "O branco é uma escolha explícita de não apoiar ninguém. O nulo acontece ao confirmar um número que não corresponde a nenhuma candidatura."
+    },
+    {
+      "id": "q06",
+      "enunciado": "O que é o boletim de urna?",
+      "alternativas": [
+        "Um documento com o total de votos de cada urna, disponível para conferência",
+        "Um panfleto de campanha",
+        "A senha do mesário"
+      ],
+      "correta": 0,
+      "explicacao": "O boletim de urna é impresso ao fim da votação e permite conferir os totais daquela seção."
+    },
+    {
+      "id": "q07",
+      "enunciado": "Fato ou fake: uma mensagem encaminhada por muita gente é sempre verdadeira.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 1,
+      "explicacao": "Fake. Quantidade de compartilhamentos não é prova de nada. Verifique a fonte antes de acreditar ou repassar."
+    },
+    {
+      "id": "q08",
+      "enunciado": "Você recebe um áudio dizendo que a eleição foi cancelada. O que fazer primeiro?",
+      "alternativas": [
+        "Compartilhar para avisar todo mundo",
+        "Checar em fontes oficiais antes de qualquer coisa",
+        "Apagar o áudio e esquecer"
+      ],
+      "correta": 1,
+      "explicacao": "Informações sobre a eleição devem ser conferidas em canais oficiais da Justiça Eleitoral. Compartilhar sem checar espalha desinformação."
+    },
+    {
+      "id": "q09",
+      "enunciado": "Fato ou fake: o voto é secreto, ninguém pode saber em quem você votou.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 0,
+      "explicacao": "Fato. O sigilo do voto é garantido: não existe ligação entre o eleitor e a opção escolhida na urna."
+    },
+    {
+      "id": "q10",
+      "enunciado": "Em uma eleição com maioria absoluta, quando há segundo turno?",
+      "alternativas": [
+        "Sempre que houver mais de dois candidatos",
+        "Quando ninguém passa de 50% dos votos válidos",
+        "Quando houver votos nulos"
+      ],
+      "correta": 1,
+      "explicacao": "Se nenhuma candidatura alcança mais da metade dos votos válidos, as duas mais votadas disputam o segundo turno."
+    },
+    {
+      "id": "q11",
+      "enunciado": "Fato ou fake: o alistamento eleitoral é gratuito.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 0,
+      "explicacao": "Fato. Tirar o título de eleitor não custa nada."
+    },
+    {
+      "id": "q12",
+      "enunciado": "O que significa 'checar a fonte' de uma notícia?",
+      "alternativas": [
+        "Ver quantas curtidas ela tem",
+        "Descobrir quem publicou originalmente e se é confiável",
+        "Perguntar a um amigo se ele acredita"
+      ],
+      "correta": 1,
+      "explicacao": "Checar a fonte é identificar a origem da informação e avaliar se é um veículo ou órgão confiável."
+    },
+    {
+      "id": "q13",
+      "enunciado": "Fato ou fake: quem não vota e não justifica pode ter pendências com a Justiça Eleitoral.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 0,
+      "explicacao": "Fato. Para quem o voto é obrigatório, a ausência sem justificativa gera pendências que precisam ser regularizadas."
+    },
+    {
+      "id": "q14",
+      "enunciado": "Uma imagem com um print de tela é prova suficiente de que algo aconteceu?",
+      "alternativas": ["Sim, prints não podem ser alterados", "Não, prints podem ser editados facilmente"],
+      "correta": 1,
+      "explicacao": "Prints podem ser montados ou editados. Procure a publicação original antes de acreditar."
+    },
+    {
+      "id": "q15",
+      "enunciado": "Fato ou fake: o mesário é um eleitor comum que ajuda a organizar a votação na seção.",
+      "alternativas": ["Fato", "Fake"],
+      "correta": 0,
+      "explicacao": "Fato. Mesários são cidadãos convocados ou voluntários que trabalham na seção eleitoral no dia da votação."
+    }
+  ]
+}

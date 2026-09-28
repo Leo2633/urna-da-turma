@@ -1,0 +1,68 @@
+{
+  "_comentario": "Arquivo editável sem programar. Textos, links, PIN padrão e regras. Após editar, recarregue o app com internet uma vez para atualizar o cache offline.",
+  "app": {
+    "nome": "Urna da Turma",
+    "subtitulo": "A eleição da sala, do jeito que a democracia gosta",
+    "organizacao": "Ação de conscientização eleitoral",
+    "rodape": "Simulação educativa. Nenhum dado pessoal é coletado."
+  },
+  "mediador": {
+    "pinPadrao": "1234",
+    "dicaPin": "PIN padrão: veja o arquivo dados/config.json"
+  },
+  "regras": {
+    "tempoDiscursoSeg": 60,
+    "maxPropostas": 3,
+    "maxSlogan": 60,
+    "perguntasPorPartida": 6,
+    "tamanhoLoteApuracao": 5,
+    "liberacaoPeloMediador": true,
+    "maioriaAbsolutaPadrao": false,
+    "eleitoresEsperadosPadrao": 30
+  },
+  "cargosSugeridos": [
+    "Representante da Turma",
+    "Presidente do Grêmio",
+    "Coordenação da Feira de Ciências",
+    "Embaixador(a) da Turma"
+  ],
+  "textos": {
+    "zeresima": {
+      "titulo": "Zerésima: a prova de que a urna começa do zero",
+      "explicacao": "Antes de abrir a votação, a urna imprime um relatório mostrando zero votos para todas as opções. Isso garante a todo mundo que nenhum voto foi registrado antes da hora. É transparência que dá para conferir."
+    },
+    "brancosNulos": {
+      "titulo": "Por que brancos e nulos não contam como válidos?",
+      "explicacao": "Voto branco é quando a pessoa escolhe não apoiar ninguém. Voto nulo é quando digita um número que não existe. Os dois são registrados, mostram participação, mas não vão para nenhuma candidatura. Só os votos válidos decidem quem vence."
+    },
+    "segundoTurno": {
+      "titulo": "Segundo turno!",
+      "explicacao": "Quando ninguém alcança a maioria exigida ou há empate, a votação é refeita só com quem ficou na frente. Assim, quem vence tem o apoio da maior parte da turma."
+    },
+    "suaVez": {
+      "titulo": "Sua vez de verdade",
+      "linhas": [
+        "Aos 16 e 17 anos, votar é uma escolha sua: o alistamento é facultativo.",
+        "A partir dos 18 anos, o voto é obrigatório.",
+        "Tirar o título de eleitor é gratuito e pode ser feito pela internet.",
+        "Aponte a câmera para o QR code ou acesse o link para começar."
+      ],
+      "chamada": "Aponte a câmera e comece o seu alistamento",
+      "url": "https://www.tse.jus.br/servicos-eleitorais/titulo-de-eleitor",
+      "urlTexto": "tse.jus.br/servicos-eleitorais/titulo-de-eleitor",
+      "observacao": "Endereço a confirmar pela equipe antes do uso."
+    }
+  },
+  "logos": {
+    "_comentario": "Caminhos relativos à pasta public/. Deixe vazio para não exibir.",
+    "principal": "",
+    "secundario": ""
+  },
+  "sons": {
+    "_comentario": "Opcional. Coloque arquivos de áudio (mp3, wav ou ogg) na pasta public/sons/ e informe o caminho, ex.: \"sons/tecla.mp3\". Vazio = som sintetizado pelo app. Use apenas áudios cedidos ou autorizados pela Justiça Eleitoral.",
+    "tecla": "",
+    "corrige": "",
+    "confirma": "",
+    "aviso": ""
+  }
+}

@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+@import '@fontsource/nunito/400.css';
+@import '@fontsource/nunito/600.css';
+@import '@fontsource/nunito/700.css';
+@import '@fontsource/nunito/900.css';
+
+/* Tokens de tema (espelho de src/theme/theme.ts) */
+@theme {
+  --font-sans: 'Nunito', ui-rounded, system-ui, sans-serif;
+
+  --color-primaria: #5b3df5;
+  --color-primaria-escura: #3b22c4;
+  --color-secundaria: #ff7a1a;
+  --color-destaque: #ffd23f;
+  --color-fundo: #f4f1ff;
+  --color-superficie: #ffffff;
+  --color-tinta: #1e1b4b;
+  --color-tinta-suave: #4b4877;
+  --color-sucesso: #16a34a;
+  --color-perigo: #dc2626;
+  --color-tecla-corrige: #f97316;
+  --color-tecla-confirma: #16a34a;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+
+  --shadow-pop: 0 6px 0 0 rgb(30 27 75 / 0.18);
+  --shadow-pop-sm: 0 3px 0 0 rgb(30 27 75 / 0.18);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-tinta);
+    background: var(--color-fundo);
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    min-height: 100dvh;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  *:focus-visible {
+    outline: 4px solid var(--color-destaque);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+  button, input, select, textarea { font: inherit; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .texto-projetor { font-size: clamp(1.5rem, 3.5vw, 3.5rem); }
+  .titulo-projetor { font-size: clamp(2.5rem, 7vw, 7rem); line-height: 1; }
+  .fundo-pontilhado {
+    background-color: var(--color-fundo);
+    background-image: radial-gradient(rgb(91 61 245 / 0.12) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+  }
+}
+
+@media print {
+  body { background: #fff; font-size: 12pt; }
+  .nao-imprimir { display: none !important; }
+  .imprimir-apenas { display: block !important; }
+  .fundo-pontilhado { background: #fff !important; }
+}
+.imprimir-apenas { display: none; }
