@@ -20,7 +20,7 @@ export function PainelMediador() {
       <button
         type="button"
         onClick={() => abrir(true)}
-        className="nao-imprimir fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-tinta text-2xl text-white shadow-pop hover:scale-105 focus-visible:outline-destaque md:h-16 md:w-16"
+        className="nao-imprimir fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-tinta text-2xl text-white shadow-pop hover:scale-105 focus-visible:outline-primaria md:h-16 md:w-16"
         aria-label="Abrir painel do mediador"
         title="Painel do mediador"
       >
@@ -81,7 +81,7 @@ function Drawer({ aberto }: { aberto: boolean }) {
           >
             <header className="flex items-center justify-between border-b-4 border-tinta/10 px-5 py-4">
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-secundaria">Painel do mediador</p>
+                <p className="text-xs font-black uppercase tracking-widest text-primaria">Painel do mediador</p>
                 <h2 className="text-xl font-black">{INFO_FASES[e.fase].titulo}</h2>
               </div>
               <button type="button" onClick={() => abrir(false)} className="rounded-full px-3 text-3xl leading-none text-tinta-suave hover:bg-black/5" aria-label="Fechar painel">

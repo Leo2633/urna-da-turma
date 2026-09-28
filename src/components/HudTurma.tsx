@@ -33,7 +33,7 @@ export function HudTurma({ compacto = false }: { compacto?: boolean }) {
       {!compacto && (
         <div className="hidden gap-1 sm:flex" aria-label="Conquistas">
           {g.conquistas.map((c) => (
-            <span key={c} title={CONQUISTAS[c].titulo} className="flex h-8 w-8 items-center justify-center rounded-full bg-tinta text-secundaria">
+            <span key={c} title={CONQUISTAS[c].titulo} className="flex h-8 w-8 items-center justify-center rounded-full bg-tinta text-destaque">
               <Icone nome={CONQUISTAS[c].icone} className="h-4 w-4" rotulo={CONQUISTAS[c].titulo} />
             </span>
           ))}

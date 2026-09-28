@@ -108,7 +108,7 @@ export function Boletim() {
             <Card className="relative overflow-hidden border-8 border-destaque bg-gradient-to-br from-superficie to-fundo text-center">
               <div className="absolute inset-3 rounded-2xl border-4 border-dashed border-primaria/30" aria-hidden />
               <div className="relative space-y-3 py-4">
-                <p className="text-sm font-black uppercase tracking-[0.4em] text-secundaria">Diploma</p>
+                <p className="text-sm font-black uppercase tracking-[0.4em] text-primaria">Diploma</p>
                 <Emblema id={eleito.mascote} className="mx-auto h-36 w-36" />
                 <p className="text-lg">A turma <strong>{e.config.turma}</strong> diploma</p>
                 <p className="text-5xl font-black text-primaria md:text-6xl">{eleito.apelido}</p>

@@ -80,7 +80,7 @@ export function Votacao() {
     <div className="fundo-pontilhado flex min-h-dvh flex-col">
       <header className="nao-imprimir mx-auto flex w-full max-w-7xl flex-wrap items-center gap-3 px-4 pt-3">
         <div className="leading-tight">
-          <p className="text-xs font-black uppercase tracking-widest text-secundaria">
+          <p className="text-xs font-black uppercase tracking-widest text-primaria">
             Votação · {e.turnoAtual}º turno
           </p>
           <h1 className="text-xl font-black md:text-2xl">{e.config.cargo}</h1>
@@ -202,7 +202,7 @@ export function Votacao() {
 
 function Tecla({ children, onClick, disabled }: { children: string; onClick: () => void; disabled?: boolean }) {
   return (
-    <button type="button" onClick={onClick} disabled={disabled} className="h-20 rounded-2xl bg-[#2b2a4a] text-4xl font-black text-white shadow-[0_5px_0_#0f0e24] transition active:translate-y-1 active:shadow-none disabled:opacity-40" aria-label={`Tecla ${children}`}>
+    <button type="button" onClick={onClick} disabled={disabled} className="h-20 rounded-2xl bg-[#23213a] text-4xl font-black text-white shadow-[0_5px_0_#07060f] transition active:translate-y-1 active:shadow-none disabled:opacity-40" aria-label={`Tecla ${children}`}>
       {children}
     </button>
   )
@@ -223,7 +223,7 @@ function TelaFim({ reduz }: { reduz: boolean }) {
 function TelaEspera({ onLiberar, reduz }: { onLiberar: () => void; reduz: boolean }) {
   return (
     <motion.div initial={reduz ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex min-h-[24rem] flex-col items-center justify-center gap-6 rounded-3xl border-8 border-tinta/80 bg-tinta p-8 text-center text-white shadow-pop">
-      <Icone nome="cadeado" className="h-24 w-24 text-secundaria" />
+      <Icone nome="cadeado" className="h-24 w-24 text-destaque" />
       <p className="titulo-projetor font-black">Próximo eleitor</p>
       <p className="text-xl text-white/80">A urna está aguardando a liberação do mediador.</p>
       <Botao tamanho="xl" variante="secundaria" onClick={onLiberar}>

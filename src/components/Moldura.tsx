@@ -28,7 +28,7 @@ export function Moldura({ children, projetor = false, titulo }: Props) {
             <Icone nome="urna" className="h-6 w-6" />
           </span>
           <div className="leading-tight">
-            <p className="text-xs font-black uppercase tracking-widest text-secundaria">{nome}</p>
+            <p className="text-xs font-black uppercase tracking-widest text-primaria">{nome}</p>
             <h1 className={`font-black ${projetor ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}>{titulo ?? info.titulo}</h1>
           </div>
         </div>

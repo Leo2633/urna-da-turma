@@ -14,7 +14,7 @@ export function SuaVez() {
   const [qr, setQr] = useState<string>('')
 
   useEffect(() => {
-    QRCode.toString(t.url, { type: 'svg', margin: 1, width: 320, color: { dark: '#1E1B4B', light: '#FFFFFF' } })
+    QRCode.toString(t.url, { type: 'svg', margin: 1, width: 320, color: { dark: '#12101F', light: '#FFFFFF' } })
       .then(setQr)
       .catch(() => setQr(''))
   }, [t.url])
@@ -29,13 +29,13 @@ export function SuaVez() {
           <ul className="space-y-3 text-2xl md:text-3xl">
             {t.linhas.map((l, i) => (
               <li key={i} className="flex gap-3">
-                <Icone nome="seta-direita" className="mt-1 h-[1em] w-[1em] text-secundaria" />
+                <Icone nome="seta-direita" className="mt-1 h-[1em] w-[1em] text-destaque" />
                 <span>{l}</span>
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-4 rounded-2xl bg-white/15 p-4">
-            <Icone nome="titulo" className="h-20 w-20 shrink-0 text-secundaria" />
+            <Icone nome="titulo" className="h-20 w-20 shrink-0 text-destaque" />
             <p className="text-xl">Hoje foi treino. Na vida real, seu voto ajuda a decidir o rumo da cidade, do estado e do país.</p>
           </div>
         </Card>
@@ -51,7 +51,7 @@ export function SuaVez() {
           </Card>
 
           <Card>
-            <p className="text-sm font-black uppercase tracking-widest text-secundaria">Resumo da turma</p>
+            <p className="text-sm font-black uppercase tracking-widest text-primaria">Resumo da turma</p>
             <p className="text-3xl font-black">
               Nível {n.nivel} · {n.titulo}
             </p>

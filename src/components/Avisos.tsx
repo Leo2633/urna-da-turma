@@ -25,14 +25,14 @@ export function Avisos() {
             initial={reduz ? false : { y: -30, opacity: 0, scale: 0.9 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={reduz ? { opacity: 0 } : { y: -20, opacity: 0 }}
-            className="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl border-4 border-destaque bg-superficie px-4 py-3 shadow-pop"
+            className="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl border-4 border-tinta bg-superficie px-4 py-3 shadow-pop"
             role="status"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tinta text-secundaria">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tinta text-destaque">
               <Icone nome={a.icone ?? 'sino'} className="h-6 w-6" />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-black uppercase tracking-widest text-secundaria">
+              <p className="text-xs font-black uppercase tracking-widest text-primaria">
                 {a.tipo === 'conquista' ? 'Conquista da turma' : a.tipo === 'nivel' ? 'Subiu de nível' : 'Aviso'}
               </p>
               <p className="font-black leading-tight">{a.titulo}</p>
