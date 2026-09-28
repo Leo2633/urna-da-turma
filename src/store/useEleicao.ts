@@ -27,6 +27,7 @@ import {
 import type { CandidatoFicticio, DadosApp } from '@/dados/tipos'
 import { carregarDados } from '@/dados/carregar'
 import { som } from '@/audio/urnaSom'
+import type { NomeIcone } from '@/components/Icone'
 
 const repo = criarRepositorio()
 
@@ -35,7 +36,7 @@ export interface Aviso {
   tipo: 'conquista' | 'nivel' | 'info'
   titulo: string
   texto?: string
-  emoji?: string
+  icone?: NomeIcone
 }
 
 interface Estado {
@@ -295,7 +296,7 @@ export const useEleicao = create<Store>()((set, get) => {
         fase: 'zeresima',
         turnos: [...e.turnos.filter((t) => t.numero !== 2), criarTurno(2, finalistas)],
       }))
-      avisar({ tipo: 'info', titulo: 'Segundo turno!', texto: 'A urna será reaberta só com os finalistas.', emoji: '🔁' })
+      avisar({ tipo: 'info', titulo: 'Segundo turno!', texto: 'A urna será reaberta só com os finalistas.', icone: 'repetir' })
     },
 
     iniciarQuiz(nomes, perguntasIds) {
@@ -332,7 +333,7 @@ export const useEleicao = create<Store>()((set, get) => {
       const nd = calcularNivel(antes + n)
       if (nd.nivel > na.nivel) {
         som.fanfarra()
-        avisar({ tipo: 'nivel', titulo: `Nível ${nd.nivel}: ${nd.titulo}!`, texto: 'A turma subiu de nível.', emoji: '⬆️' })
+        avisar({ tipo: 'nivel', titulo: `Nível ${nd.nivel}: ${nd.titulo}!`, texto: 'A turma subiu de nível.', icone: 'seta-cima' })
       }
     },
 
@@ -346,7 +347,7 @@ export const useEleicao = create<Store>()((set, get) => {
       for (const id of novas) {
         const c = CONQUISTAS[id]
         xp += c.xp
-        avisar({ tipo: 'conquista', titulo: c.titulo, texto: c.descricao, emoji: c.emoji })
+        avisar({ tipo: 'conquista', titulo: c.titulo, texto: c.descricao, icone: c.icone })
       }
       som.fanfarra()
       get().ganharXp(xp)

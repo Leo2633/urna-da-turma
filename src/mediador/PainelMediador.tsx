@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Icone } from '@/components/Icone'
 import { AnimatePresence, motion } from 'motion/react'
 import { Botao } from '@/components/Botao'
 import { Modal } from '@/components/Modal'
@@ -23,7 +24,7 @@ export function PainelMediador() {
         aria-label="Abrir painel do mediador"
         title="Painel do mediador"
       >
-        <span aria-hidden>🔐</span>
+        <Icone nome="cadeado" className="h-7 w-7" />
       </button>
       <Modal aberto={aberto && !autenticado} titulo="Painel do mediador" onFechar={() => abrir(false)}>
         <PinGate onOk={() => undefined} onCancelar={() => abrir(false)} />

@@ -5,16 +5,17 @@ export interface InfoConquista {
   titulo: string
   descricao: string
   xp: number
-  emoji: string
+  /** Nome do ícone em src/components/Icone.tsx. */
+  icone: 'megafone' | 'urna' | 'trofeu' | 'escudo' | 'lupa' | 'repetir'
 }
 
 export const CONQUISTAS: Record<ConquistaId, InfoConquista> = {
-  primeira_candidatura: { id: 'primeira_candidatura', titulo: 'Coragem cívica', descricao: 'A turma registrou sua primeira candidatura.', xp: 50, emoji: '🙋' },
-  urna_aberta: { id: 'urna_aberta', titulo: 'Urna aberta', descricao: 'A zerésima foi conferida e a votação começou.', xp: 50, emoji: '🗳️' },
-  comparecimento_total: { id: 'comparecimento_total', titulo: 'Comparecimento Total', descricao: '100% da turma votou. Ninguém ficou de fora!', xp: 200, emoji: '🏆' },
-  eleicao_sem_nulos: { id: 'eleicao_sem_nulos', titulo: 'Eleição sem Nulos', descricao: 'Nenhum voto nulo. A turma votou com atenção.', xp: 150, emoji: '🎯' },
-  turma_checadora: { id: 'turma_checadora', titulo: 'Turma Checadora', descricao: 'Pelo menos 70% de acertos no Fato ou Fake.', xp: 150, emoji: '🔎' },
-  democracia_dois_turnos: { id: 'democracia_dois_turnos', titulo: 'Democracia em Dois Turnos', descricao: 'A turma viveu um segundo turno completo.', xp: 200, emoji: '🔁' },
+  primeira_candidatura: { id: 'primeira_candidatura', titulo: 'Coragem cívica', descricao: 'A turma registrou sua primeira candidatura.', xp: 50, icone: 'megafone' },
+  urna_aberta: { id: 'urna_aberta', titulo: 'Urna aberta', descricao: 'A zerésima foi conferida e a votação começou.', xp: 50, icone: 'urna' },
+  comparecimento_total: { id: 'comparecimento_total', titulo: 'Comparecimento Total', descricao: '100% da turma votou. Ninguém ficou de fora!', xp: 200, icone: 'trofeu' },
+  eleicao_sem_nulos: { id: 'eleicao_sem_nulos', titulo: 'Eleição sem Nulos', descricao: 'Nenhum voto nulo. A turma votou com atenção.', xp: 150, icone: 'escudo' },
+  turma_checadora: { id: 'turma_checadora', titulo: 'Turma Checadora', descricao: 'Pelo menos 70% de acertos no Fato ou Fake.', xp: 150, icone: 'lupa' },
+  democracia_dois_turnos: { id: 'democracia_dois_turnos', titulo: 'Democracia em Dois Turnos', descricao: 'A turma viveu um segundo turno completo.', xp: 200, icone: 'repetir' },
 }
 
 export const XP_POR_FASE = 30

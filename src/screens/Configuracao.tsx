@@ -3,7 +3,7 @@ import { Botao } from '@/components/Botao'
 import { Card } from '@/components/Card'
 import { Alternador, CampoSelect, CampoTexto } from '@/components/Campo'
 import { Moldura } from '@/components/Moldura'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Icone, type NomeIcone } from '@/components/Icone'
 import { impedimentoParaAvancar } from '@/core'
 import { useEleicao } from '@/store/useEleicao'
 
@@ -88,14 +88,14 @@ export function Configuracao() {
                 ativo={e.config.modoCandidatos === 'turma'}
                 titulo="Alunos da turma"
                 texto="Quem quiser se candidata com apelido, número e propostas."
-                mascote="tucano"
+                icone="pessoas"
                 onClick={() => atualizar({ modoCandidatos: 'turma' })}
               />
               <OpcaoModo
                 ativo={e.config.modoCandidatos === 'ficticios'}
                 titulo="Personagens fictícios"
                 texto={`${dados.ficticios.length} candidaturas prontas, com propostas para a escola. Ninguém fica exposto.`}
-                mascote="arara"
+                icone="mascara"
                 onClick={() => atualizar({ modoCandidatos: 'ficticios' })}
               />
             </div>
@@ -110,7 +110,7 @@ export function Configuracao() {
 
           <div className="flex flex-wrap items-center gap-3">
             <Botao tamanho="lg" onClick={comecar}>
-              Começar a eleição 🚀
+              Começar a eleição
             </Botao>
             {tentou && impedimento && <p className="font-bold text-perigo">{impedimento}</p>}
           </div>
@@ -137,7 +137,7 @@ export function Configuracao() {
   )
 }
 
-function OpcaoModo({ ativo, titulo, texto, mascote, onClick }: { ativo: boolean; titulo: string; texto: string; mascote: 'tucano' | 'arara'; onClick: () => void }) {
+function OpcaoModo({ ativo, titulo, texto, icone, onClick }: { ativo: boolean; titulo: string; texto: string; icone: NomeIcone; onClick: () => void }) {
   return (
     <button
       type="button"
@@ -146,7 +146,9 @@ function OpcaoModo({ ativo, titulo, texto, mascote, onClick }: { ativo: boolean;
       aria-label={`${titulo}: ${texto}`}
       className={`flex items-start gap-3 rounded-2xl border-4 p-3 text-left transition ${ativo ? 'border-primaria bg-primaria/10' : 'border-tinta/10 hover:border-tinta/30'}`}
     >
-      <Mascote id={mascote} className="h-16 w-16 shrink-0" />
+      <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${ativo ? 'bg-primaria text-white' : 'bg-tinta/10 text-tinta'}`}>
+        <Icone nome={icone} className="h-8 w-8" />
+      </span>
       <span>
         <span className="block font-black">{titulo}</span>
         <span className="block text-sm text-tinta-suave">{texto}</span>

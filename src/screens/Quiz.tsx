@@ -1,3 +1,4 @@
+import { Icone } from '@/components/Icone'
 import { useMemo, useState } from 'react'
 import { motion } from 'motion/react'
 import { Botao } from '@/components/Botao'
@@ -104,7 +105,7 @@ export function Quiz() {
             <CampoTexto rotulo="Quantas perguntas? (5 a 8)" type="number" min={5} max={8} value={qtd} onChange={(ev) => setQtd(Number(ev.target.value))} />
             <div className="flex flex-wrap gap-2">
               <Botao tamanho="lg" onClick={comecar}>
-                Começar o desafio 🔎
+                Começar o desafio
               </Botao>
               <Botao tamanho="lg" variante="fantasma" onClick={avancar}>
                 Pular esta fase
@@ -114,9 +115,7 @@ export function Quiz() {
           <Card className="bg-destaque">
             <h3 className="text-2xl font-black">Conquista em jogo</h3>
             <p className="mt-2 text-lg">
-              <span className="text-3xl" aria-hidden>
-                🔎
-              </span>{' '}
+              <Icone nome="lupa" className="mr-1 h-7 w-7 align-text-bottom" />
               <strong>Turma Checadora</strong>: acerte 70% ou mais das perguntas.
             </p>
           </Card>
@@ -205,7 +204,8 @@ export function Quiz() {
               </div>
               {escolha !== null && (
                 <motion.div initial={reduz ? false : { scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className={`rounded-2xl p-5 text-xl md:text-2xl ${escolha === exibida.correta ? 'bg-sucesso/15' : 'bg-perigo/10'}`} role="status">
-                  <p className="font-black">{escolha === exibida.correta ? '✅ Acertou!' : '❌ Não foi dessa vez.'}</p>
+                  <p className="font-black"><Icone nome={escolha === exibida.correta ? 'certo' : 'errado'} className="mr-1 h-[1.1em] w-[1.1em] align-text-bottom" />
+                    {escolha === exibida.correta ? 'Acertou!' : 'Não foi dessa vez.'}</p>
                   <p>{exibida.explicacao}</p>
                   <Botao tamanho="lg" className="mt-4" onClick={proxima}>
                     {q.indiceAtual >= perguntas.length ? 'Ver resultado →' : 'Próxima pergunta →'}

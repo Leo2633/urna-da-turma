@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Botao } from '@/components/Botao'
 import { Santinho } from '@/components/Santinho'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Icone } from '@/components/Icone'
 import { HudTurma } from '@/components/HudTurma'
 import { chaveDeInterpretacao, interpretarDigitos, turnoCorrente } from '@/core'
 import { useTecladoUrna } from '@/hooks/useTeclado'
@@ -101,7 +101,7 @@ export function Votacao() {
           <div className="mt-1 h-4 w-full overflow-hidden rounded-full bg-tinta/10" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} aria-label="Comparecimento da turma">
             <motion.div className={`h-full rounded-full ${pct >= 100 ? 'bg-sucesso' : 'bg-secundaria'}`} initial={false} animate={{ width: `${pct}%` }} transition={reduz ? { duration: 0 } : { type: 'spring', stiffness: 100, damping: 20 }} />
           </div>
-          <p className="mt-1 text-xs text-tinta-suave">{pct >= 100 ? 'Meta batida: 100% da turma votou! 🏆' : 'Meta coletiva: 100% da turma votou.'}</p>
+          <p className="mt-1 text-xs text-tinta-suave">{pct >= 100 ? 'Meta batida: 100% da turma votou!' : 'Meta coletiva: 100% da turma votou.'}</p>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ function TelaFim({ reduz }: { reduz: boolean }) {
       <motion.p className="titulo-projetor font-black text-sucesso" animate={reduz ? {} : { scale: [1, 1.08, 1] }} transition={{ repeat: 2, duration: 0.5 }}>
         FIM
       </motion.p>
-      <p className="texto-projetor font-black">Voto registrado! 🎉</p>
+      <p className="texto-projetor font-black">Voto registrado!</p>
       <p className="text-xl text-tinta-suave">Obrigado por participar. Chame a próxima pessoa.</p>
     </motion.div>
   )
@@ -223,11 +223,12 @@ function TelaFim({ reduz }: { reduz: boolean }) {
 function TelaEspera({ onLiberar, reduz }: { onLiberar: () => void; reduz: boolean }) {
   return (
     <motion.div initial={reduz ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex min-h-[24rem] flex-col items-center justify-center gap-6 rounded-3xl border-8 border-tinta/80 bg-tinta p-8 text-center text-white shadow-pop">
-      <Mascote id="onca" className="h-32 w-32" />
+      <Icone nome="cadeado" className="h-24 w-24 text-secundaria" />
       <p className="titulo-projetor font-black">Próximo eleitor</p>
       <p className="text-xl text-white/80">A urna está aguardando a liberação do mediador.</p>
       <Botao tamanho="xl" variante="secundaria" onClick={onLiberar}>
-        Mediador: liberar urna 🔓
+        <Icone nome="cadeado-aberto" />
+        Mediador: liberar urna
       </Botao>
     </motion.div>
   )

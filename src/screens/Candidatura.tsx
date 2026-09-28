@@ -4,13 +4,14 @@ import { Card } from '@/components/Card'
 import { CampoTexto } from '@/components/Campo'
 import { Moldura } from '@/components/Moldura'
 import { Santinho } from '@/components/Santinho'
-import { Mascote, NOMES_MASCOTES } from '@/components/mascotes/Mascote'
-import { CORES_SANTINHO, MASCOTES, validarApelido, validarNumero, validarSlogan, type Candidato, type CorSantinho, type Mascote as MascoteId } from '@/core'
+import { Emblema, NOMES_SIMBOLOS } from '@/components/Emblema'
+import { Icone } from '@/components/Icone'
+import { CORES_SANTINHO, SIMBOLOS, normalizarSimbolo, validarApelido, validarNumero, validarSlogan, type Candidato, type CorSantinho, type Simbolo } from '@/core'
 import { tema } from '@/theme/theme'
 import { useEleicao } from '@/store/useEleicao'
 import { confeteCurto } from '@/components/confete'
 
-const vazio = (): Omit<Candidato, 'id'> => ({ apelido: '', numero: '', slogan: '', propostas: ['', '', ''], mascote: MASCOTES[Math.floor(Math.random() * MASCOTES.length)], cor: CORES_SANTINHO[Math.floor(Math.random() * CORES_SANTINHO.length)] })
+const vazio = (): Omit<Candidato, 'id'> => ({ apelido: '', numero: '', slogan: '', propostas: ['', '', ''], mascote: SIMBOLOS[Math.floor(Math.random() * SIMBOLOS.length)], cor: CORES_SANTINHO[Math.floor(Math.random() * CORES_SANTINHO.length)] })
 
 export function Candidatura() {
   const e = useEleicao((s) => s.eleicao)!
@@ -76,11 +77,11 @@ export function Candidatura() {
                 ))}
               </fieldset>
               <fieldset>
-                <legend className="mb-2 font-bold">Mascote</legend>
+                <legend className="mb-2 font-bold">Símbolo da campanha</legend>
                 <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-                  {MASCOTES.map((m: MascoteId) => (
-                    <button key={m} type="button" onClick={() => setForm({ ...form, mascote: m })} aria-pressed={form.mascote === m} aria-label={NOMES_MASCOTES[m]} className={`rounded-2xl border-4 p-1 transition ${form.mascote === m ? 'border-primaria bg-primaria/10' : 'border-transparent hover:border-tinta/20'}`}>
-                      <Mascote id={m} className="h-14 w-14" />
+                  {SIMBOLOS.map((m: Simbolo) => (
+                    <button key={m} type="button" onClick={() => setForm({ ...form, mascote: m })} aria-pressed={normalizarSimbolo(form.mascote) === m} aria-label={NOMES_SIMBOLOS[m]} title={NOMES_SIMBOLOS[m]} className={`rounded-2xl border-4 p-1 transition ${normalizarSimbolo(form.mascote) === m ? 'border-primaria bg-primaria/10' : 'border-transparent hover:border-tinta/20'}`}>
+                      <Emblema id={m} className="h-14 w-14" />
                     </button>
                   ))}
                 </div>
@@ -94,7 +95,7 @@ export function Candidatura() {
                 </div>
               </fieldset>
               <div className="flex flex-wrap gap-2">
-                <Botao onClick={salvar}>{editandoId ? 'Salvar alterações' : 'Registrar candidatura ✨'}</Botao>
+                <Botao onClick={salvar}>{editandoId ? 'Salvar alterações' : 'Registrar candidatura'}</Botao>
                 {(editandoId || e.candidatos.length > 0) && (
                   <Botao variante="fantasma" onClick={() => { setForm(vazio()); setEditandoId(null); setTentou(false); setFormAberto(false) }}>
                     Cancelar
@@ -127,10 +128,10 @@ export function Candidatura() {
                   <Santinho candidato={c} tamanho="mini" className="flex-1" />
                   <div className="flex flex-col gap-1">
                     <Botao variante="fantasma" tamanho="sm" onClick={() => iniciarEdicao(c)} aria-label={`Editar ${c.apelido}`}>
-                      ✏️
+                      <Icone nome="lapis" className="h-5 w-5" />
                     </Botao>
                     <Botao variante="fantasma" tamanho="sm" onClick={() => remover(c.id)} aria-label={`Remover ${c.apelido}`}>
-                      🗑️
+                      <Icone nome="lixeira" className="h-5 w-5" />
                     </Botao>
                   </div>
                 </li>

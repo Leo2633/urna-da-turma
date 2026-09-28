@@ -1,3 +1,4 @@
+import { Icone } from './Icone'
 import { FASES, INFO_FASES, indiceFase, type Fase } from '@/core'
 
 interface Props {
@@ -35,7 +36,7 @@ export function TrilhaFases({ atual, quizAtivo, onIr, compacta }: Props) {
                 className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-black shadow-pop-sm transition-transform hover:scale-105 disabled:hover:scale-100 ${cor}`}
                 aria-label={`${info.titulo}${estado === 'atual' ? ' (fase atual)' : ''}`}
               >
-                {estado === 'feita' ? '✓' : i + 1}
+                {estado === 'feita' ? <Icone nome="certo" className="h-4 w-4" /> : i + 1}
               </button>
               {i < fases.length - 1 && <div className={`w-1.5 flex-1 ${estado === 'feita' ? 'bg-sucesso' : 'bg-tinta/15'}`} aria-hidden />}
             </div>

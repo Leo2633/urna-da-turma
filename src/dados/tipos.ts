@@ -1,4 +1,4 @@
-import type { CorSantinho, Mascote } from '@/core/tipos'
+import type { CorSantinho, Simbolo } from '@/core/tipos'
 
 export interface ConfigApp {
   app: { nome: string; subtitulo: string; organizacao: string; rodape: string }
@@ -29,7 +29,7 @@ export interface CandidatoFicticio {
   numero: string
   slogan: string
   propostas: string[]
-  mascote: Mascote
+  mascote: Simbolo
   cor: CorSantinho
 }
 

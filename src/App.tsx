@@ -12,7 +12,7 @@ import { Apuracao } from '@/screens/Apuracao'
 import { Boletim } from '@/screens/Boletim'
 import { SuaVez } from '@/screens/SuaVez'
 import { turnoCorrente, type Fase } from '@/core'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Icone } from '@/components/Icone'
 
 const TELAS: Record<Fase, () => React.JSX.Element | null> = {
   configuracao: Configuracao,
@@ -40,7 +40,7 @@ export default function App() {
     return (
       <div className="fundo-pontilhado flex min-h-dvh items-center justify-center" aria-busy>
         <div className="text-center">
-          <Mascote id="boto" className="mx-auto h-28 w-28 animate-bounce" />
+          <Icone nome="urna" className="mx-auto h-20 w-20 text-primaria" />
           <p className="mt-2 text-xl font-black">Preparando a urna…</p>
         </div>
       </div>

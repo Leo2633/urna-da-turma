@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { Botao } from '@/components/Botao'
 import { Card } from '@/components/Card'
 import { Moldura } from '@/components/Moldura'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Emblema } from '@/components/Emblema'
+import { Icone } from '@/components/Icone'
 import { apurar } from '@/core'
 import { useEleicao } from '@/store/useEleicao'
 import { confeteGrande } from '@/components/confete'
@@ -96,7 +97,8 @@ export function Boletim() {
           </div>
           <div className="mt-4 flex gap-2 nao-imprimir">
             <Botao variante="contorno" onClick={() => window.print()}>
-              🖨️ Imprimir boletim
+              <Icone nome="impressora" />
+              Imprimir boletim
             </Botao>
           </div>
         </Card>
@@ -107,7 +109,7 @@ export function Boletim() {
               <div className="absolute inset-3 rounded-2xl border-4 border-dashed border-primaria/30" aria-hidden />
               <div className="relative space-y-3 py-4">
                 <p className="text-sm font-black uppercase tracking-[0.4em] text-secundaria">Diploma</p>
-                <Mascote id={eleito.mascote} className="mx-auto h-36 w-36" />
+                <Emblema id={eleito.mascote} className="mx-auto h-36 w-36" />
                 <p className="text-lg">A turma <strong>{e.config.turma}</strong> diploma</p>
                 <p className="text-5xl font-black text-primaria md:text-6xl">{eleito.apelido}</p>
                 <p className="text-lg">
@@ -116,7 +118,6 @@ export function Boletim() {
                 <p className="text-sm text-tinta-suave">
                   Eleito(a) com {ultimo.ranking[0].votos} votos ({ultimo.ranking[0].percentualValidos}% dos válidos) em {data.toLocaleDateString('pt-BR')}.
                 </p>
-                <p className="pt-2 text-2xl">🎓 🎉 🏅</p>
               </div>
             </Card>
           ) : (

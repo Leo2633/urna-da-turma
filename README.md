@@ -71,7 +71,7 @@ src/store/          estado global (zustand) com persistência em IndexedDB
 src/adapters/       repositório de persistência e hash do PIN (troca fácil por backend)
 src/dados/          carregamento e validação dos JSON
 src/theme/          tokens de tema
-src/components/     UI compartilhada, mascotes SVG, santinho, trilha de fases, HUD
+src/components/     UI compartilhada, símbolos e ícones SVG próprios, santinho, trilha de fases, HUD
 src/screens/        uma tela por fase
 src/mediador/       PIN e painel do mediador
 src/audio/          sons sintetizados (Web Audio API)
@@ -82,7 +82,7 @@ docs/               roteiro do mediador
 ## Fluxo
 
 1. Configuração (turma, cargo, eleitores, modo de candidatos, maioria absoluta, quiz)
-2. Registro de candidatura (apelido, número, slogan, propostas, mascote, cor)
+2. Registro de candidatura (apelido, número, slogan, propostas, símbolo, cor)
 3. Horário eleitoral (carrossel de santinhos com cronômetro)
 4. Fato ou Fake (opcional)
 5. Zerésima

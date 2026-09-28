@@ -3,7 +3,7 @@ import QRCode from 'qrcode'
 import { Botao } from '@/components/Botao'
 import { Card } from '@/components/Card'
 import { Moldura } from '@/components/Moldura'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Icone } from '@/components/Icone'
 import { CONQUISTAS, calcularNivel } from '@/core'
 import { useEleicao } from '@/store/useEleicao'
 
@@ -29,13 +29,13 @@ export function SuaVez() {
           <ul className="space-y-3 text-2xl md:text-3xl">
             {t.linhas.map((l, i) => (
               <li key={i} className="flex gap-3">
-                <span aria-hidden>👉</span>
+                <Icone nome="seta-direita" className="mt-1 h-[1em] w-[1em] text-secundaria" />
                 <span>{l}</span>
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-4 rounded-2xl bg-white/15 p-4">
-            <Mascote id="tucano" className="h-24 w-24 shrink-0" />
+            <Icone nome="titulo" className="h-20 w-20 shrink-0 text-secundaria" />
             <p className="text-xl">Hoje foi treino. Na vida real, seu voto ajuda a decidir o rumo da cidade, do estado e do país.</p>
           </div>
         </Card>
@@ -60,9 +60,7 @@ export function SuaVez() {
               {e.gamificacao.conquistas.length === 0 && <li className="text-tinta-suave">Nenhuma conquista desta vez.</li>}
               {e.gamificacao.conquistas.map((c) => (
                 <li key={c} className="flex items-center gap-2">
-                  <span className="text-2xl" aria-hidden>
-                    {CONQUISTAS[c].emoji}
-                  </span>
+                  <Icone nome={CONQUISTAS[c].icone} className="h-6 w-6 text-primaria" />
                   <span className="font-bold">{CONQUISTAS[c].titulo}</span>
                 </li>
               ))}

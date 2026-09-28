@@ -28,27 +28,28 @@ export const FASES: Fase[] = [
 
 export type ModoCandidatos = 'turma' | 'ficticios'
 
-/** Identificador de mascote (ilustração própria em src/components/mascotes). */
-export type Mascote =
-  | 'tucano'
-  | 'jacare'
-  | 'guara'
-  | 'boto'
-  | 'peixe_boi'
-  | 'arara'
-  | 'onca'
-  | 'tartaruga'
+/** Identificador do símbolo de campanha (desenho próprio em src/components/Emblema.tsx). */
+export type Simbolo = 'onda' | 'raio' | 'folha' | 'ritmo' | 'sol' | 'vela' | 'prisma' | 'orbita'
 
-export const MASCOTES: Mascote[] = [
-  'tucano',
-  'jacare',
-  'guara',
-  'boto',
-  'peixe_boi',
-  'arara',
-  'onca',
-  'tartaruga',
-]
+export const SIMBOLOS: Simbolo[] = ['onda', 'raio', 'folha', 'ritmo', 'sol', 'vela', 'prisma', 'orbita']
+
+/** Identificadores usados antes da troca dos mascotes por símbolos. */
+const SIMBOLOS_ANTIGOS: Record<string, Simbolo> = {
+  boto: 'onda',
+  arara: 'raio',
+  tartaruga: 'folha',
+  guara: 'ritmo',
+  tucano: 'sol',
+  onca: 'vela',
+  jacare: 'prisma',
+  peixe_boi: 'orbita',
+}
+
+/** Converte qualquer identificador salvo (novo ou antigo) em um símbolo válido. */
+export function normalizarSimbolo(id: string): Simbolo {
+  if ((SIMBOLOS as string[]).includes(id)) return id as Simbolo
+  return SIMBOLOS_ANTIGOS[id] ?? 'onda'
+}
 
 /** Cores de santinho (chaves do tema). */
 export type CorSantinho = 'roxo' | 'laranja' | 'verde' | 'azul' | 'rosa' | 'amarelo' | 'vermelho' | 'ciano'
@@ -61,7 +62,8 @@ export interface Candidato {
   numero: string
   slogan: string
   propostas: string[]
-  mascote: Mascote
+  /** Símbolo de campanha. O nome do campo foi mantido por compatibilidade com eleições já salvas. */
+  mascote: Simbolo
   cor: CorSantinho
 }
 

@@ -1,3 +1,4 @@
+import { Icone } from './Icone'
 import type { ReactNode } from 'react'
 import { HudTurma } from './HudTurma'
 import { Logos } from './Logos'
@@ -23,8 +24,8 @@ export function Moldura({ children, projetor = false, titulo }: Props) {
     <div className="fundo-pontilhado flex min-h-dvh flex-col">
       <header className={`nao-imprimir mx-auto flex w-full max-w-7xl flex-wrap items-center gap-3 px-4 pt-4 ${projetor ? 'pb-1' : 'pb-2'}`}>
         <div className="flex items-center gap-3">
-          <span className="text-3xl" aria-hidden>
-            🗳️
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primaria text-white">
+            <Icone nome="urna" className="h-6 w-6" />
           </span>
           <div className="leading-tight">
             <p className="text-xs font-black uppercase tracking-widest text-secundaria">{nome}</p>

@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Botao } from '@/components/Botao'
 import { Card } from '@/components/Card'
 import { Moldura } from '@/components/Moldura'
-import { Mascote } from '@/components/mascotes/Mascote'
+import { Emblema } from '@/components/Emblema'
 import { apurar, planejarLotes, turnoCorrente } from '@/core'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useEleicao } from '@/store/useEleicao'
@@ -63,7 +63,7 @@ export function Apuracao() {
           <div className="flex gap-2">
             {!terminou && !rodando && (
               <Botao tamanho="lg" onClick={() => setRodando(true)}>
-                {passo === 0 ? '🥁 Começar a apuração' : 'Continuar'}
+                {passo === 0 ? 'Começar a apuração' : 'Continuar'}
               </Botao>
             )}
             {!terminou && rodando && (
@@ -94,7 +94,7 @@ export function Apuracao() {
             <Card className={`space-y-3 ${d.tipo === 'eleito' ? 'bg-sucesso text-white' : d.tipo === 'segundo_turno' ? 'bg-secundaria' : 'bg-destaque'}`}>
               {d.tipo === 'eleito' && (
                 <div className="flex flex-col items-center gap-3 text-center md:flex-row md:text-left">
-                  <Mascote id={d.candidato.mascote} className="h-32 w-32 shrink-0" />
+                  <Emblema id={d.candidato.mascote} className="h-32 w-32 shrink-0" />
                   <div>
                     <p className="text-xl font-black uppercase tracking-widest">Eleito(a) para {e.config.cargo}</p>
                     <p className="titulo-projetor font-black">{d.candidato.apelido}</p>
@@ -151,7 +151,7 @@ export function Apuracao() {
             <div className="flex flex-wrap gap-3 lg:col-span-2">
               {d.tipo === 'segundo_turno' && (
                 <Botao tamanho="xl" variante="secundaria" onClick={() => iniciarSegundoTurno(d.finalistas)}>
-                  Iniciar 2º turno 🔁
+                  Iniciar 2º turno
                 </Botao>
               )}
               {d.tipo === 'empate_final' && (
@@ -170,12 +170,12 @@ export function Apuracao() {
   )
 }
 
-function Barra({ rotulo, mascote, votos, max, cor, pct, reduz, destaque, secundaria }: { rotulo: string; mascote?: Parameters<typeof Mascote>[0]['id']; votos: number; max: number; cor: string; pct?: number; reduz: boolean; destaque?: boolean; secundaria?: boolean }) {
+function Barra({ rotulo, mascote, votos, max, cor, pct, reduz, destaque, secundaria }: { rotulo: string; mascote?: string; votos: number; max: number; cor: string; pct?: number; reduz: boolean; destaque?: boolean; secundaria?: boolean }) {
   const largura = Math.max(2, (votos / max) * 100)
   return (
     <li className={`flex items-center gap-3 ${secundaria ? 'opacity-90' : ''}`}>
       <div className="flex w-40 shrink-0 items-center gap-2 md:w-64">
-        {mascote && <Mascote id={mascote} className="h-10 w-10 md:h-14 md:w-14" />}
+        {mascote && <Emblema id={mascote} className="h-10 w-10 md:h-14 md:w-14" />}
         <span className={`truncate font-black ${secundaria ? 'text-lg text-tinta-suave' : 'text-xl md:text-2xl'}`}>{rotulo}</span>
       </div>
       <div className="relative h-12 flex-1 overflow-hidden rounded-2xl bg-tinta/5 md:h-16">

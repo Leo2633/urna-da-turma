@@ -61,7 +61,7 @@ export function Zeresima() {
       </div>
       <div className="mt-6 flex justify-center">
         <Botao tamanho="xl" variante="sucesso" onClick={abrir}>
-          Conferido! Abrir a urna 🗳️
+          Conferido! Abrir a urna
         </Botao>
       </div>
     </Moldura>

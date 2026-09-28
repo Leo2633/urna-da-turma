@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useEleicao } from '@/store/useEleicao'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { Icone } from './Icone'
 
 /** Toasts de conquista, nível e informações. */
 export function Avisos() {
@@ -27,8 +28,8 @@ export function Avisos() {
             className="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl border-4 border-destaque bg-superficie px-4 py-3 shadow-pop"
             role="status"
           >
-            <span className="text-3xl" aria-hidden>
-              {a.emoji ?? '✨'}
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tinta text-secundaria">
+              <Icone nome={a.icone ?? 'sino'} className="h-6 w-6" />
             </span>
             <div className="min-w-0 flex-1">
               <p className="text-xs font-black uppercase tracking-widest text-secundaria">
